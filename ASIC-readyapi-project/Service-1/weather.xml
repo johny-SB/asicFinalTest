@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource id="9ff85fcb-0edb-4c51-b7d0-569454f0e626" name="weather" path="/data/2.5/weather" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b1879c94-ebd2-480e-9937-923e91c7ea87fileName">weather</con:setting>
+    <con:setting id="f3f87ea4-c46c-4001-b91c-d64e351d9ee3fileName">weather</con:setting>
+    <con:setting id="9ff85fcb-0edb-4c51-b7d0-569454f0e626fileName">weather</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method id="270c1a1b-4c38-45bf-b32c-a8f72fd00200" method="GET" name="Method 2">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>appid</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>q</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element>weat:Fault</con:element>
+    </con:representation>
+    <con:request id="1546ca89-5592-4b24-bc59-d54b308c5e0b" mediaType="application/json" name="Request 1">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="New header" value="" xmlns="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>http://api.openweathermap.org</con:endpoint>
+      <con:request/>
+      <con:originalUri>http://api.openweathermap.org/data/2.5/weather</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>aaa</con:selectedAuthProfile>
+        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="appid" value="2288725f98e49f98c3c00044cc8d7618"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>q</con:entry>
+        <con:entry>appid</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
